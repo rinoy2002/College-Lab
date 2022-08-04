@@ -1,0 +1,139 @@
+1.
+
+DECLARE 
+   message  varchar2(20):= 'Hello World'; 
+BEGIN 
+   dbms_output.put_line(message); 
+END; 
+/ 
+
+2.
+
+DECLARE 
+   score  number:= 75; 
+   grade char(1);
+BEGIN 
+    if ( score >= 90 ) then
+    grade:='S';
+    elsif ( score >= 80 ) then
+    grade:='A';
+    elsif ( score >= 70 ) then
+    grade:='B';
+    elsif ( score >= 60 ) then
+    grade:='C';
+    elsif ( score >= 50 ) then
+    grade:='D';
+    else
+    grade:='F';
+    end if;
+   dbms_output.put_line('Grade is: '|| grade); 
+END; 
+/ 
+
+3.
+
+DECLARE 
+   type student is varray(5) of varchar(20) not null;
+   type marks is varray(5) of number not null;
+   students student := student('A','B','C','D','E');
+   marks_1 marks := marks(70,75,68,85,90);
+   marks_2 marks := marks(85,65,100,67,70);
+   student_no number;
+   tot_marks number;
+BEGIN
+    student_no:=students.count;
+    for i in 1..student_no loop
+    tot_marks:=marks_1(i)+marks_2(i);
+    dbms_output.put_line('Total marks of '||students(i)||' : '||tot_marks);
+    end loop;
+END; 
+/ 
+
+4.
+
+declare
+    input number:=5;
+    factorial number:=1;
+    ind number:=1;
+begin
+    while ind<=input loop
+        factorial:=factorial*ind;
+        ind:=ind+1;
+    end loop;
+    dbms_output.put_line('Factorial of '||input||' is: '||factorial); 
+end;
+/
+
+5.
+
+declare
+    input number:=3;
+    max_limit number:=10;
+begin
+    for i in 1..max_limit loop
+        dbms_output.put_line(input||' X '||i||' = '||input*i);     
+end loop;
+    
+end;
+/
+
+
+6.
+delete from Numbers;
+declare
+    lim number:=10;
+begin
+    for i in 1..lim loop
+        if (mod(i,2)=0) then
+           insert into Numbers values(i,'Even');
+        else
+           insert into Numbers values(i,'Odd');
+        end if;
+    end loop;
+end;
+/
+select * from Numbers;
+
+
+7.
+
+
+delete from Num_op;
+declare
+    lim number:=10;
+begin
+    for i in 1..lim loop
+        insert into Num_op values(i,power(i,2),power(i,3));
+    end loop;
+end;
+/
+select * from Num_op;
+
+
+8.
+
+
+declare
+    input_cid number:=1;
+    row_no number;
+    emi number;
+    customer_info Customer%rowtype;
+begin
+    select count(*)
+    into row_no
+    from Customer
+    where cid=input_cid;
+    if (row_no=1) then
+        update Customer set emi=emi/2 where cid=input_cid;
+        select * into customer_info from Customer where cid=input_cid;
+        dbms_output.put_line('Updated emi: '||customer_info.emi);
+    else
+        dbms_output.put_line('Customer of cid '||input_cid||' not found');
+    end if;
+    
+end;
+/
+
+
+
+

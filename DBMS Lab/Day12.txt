@@ -1,0 +1,188 @@
+1.
+
+declare
+num_1 number;
+num_2 number;
+min_no number;
+    procedure findMin(num_1 in number,num_2 in number,min_no out number) is
+        begin
+        if (num_1<num_2) then
+            min_no:=num_1;
+        else
+            min_no:=num_2;
+        end if;
+        end;
+begin
+    num_1:=21;
+    num_2:=56;
+    findMin(num_1,num_2,min_no);
+    dbms_output.put_line('Minimum is: '||min_no);
+end;
+/
+    
+    
+3.
+
+declare
+    a number;
+    b number;
+    c number;
+    det number;
+    r1 number;
+    r2 number;
+    procedure findRoots(x in number,y in number,z in number,r1 out number,r2 out number) is
+        begin
+        det:=b*b-4*a*c;
+        if(det<0) then
+            dbms_output.put_line('Imaginary roots');
+            r1:=0;
+            r2:=0;
+        else
+            r1:=(b*-1+sqrt(det))/(2*a);
+            r2:=(b*-1-sqrt(det))/(2*a);
+        end if;
+    end;
+begin
+    a:=1;
+    b:=-5;
+    c:=6;
+    findRoots(a,b,c,r1,r2);
+    dbms_output.put_line('Roots are '||r1||','||r2);
+end;
+    
+    
+6.
+
+
+declare
+    n number:=7;
+    factorial number:=1;
+    procedure findFact(x in number) is
+    begin
+        factorial:=1;
+        for i in 1..x loop
+            factorial:=factorial*i;
+        end loop;
+        dbms_output.put_line('Factorial of '||x||' is: '||factorial); 
+    end;
+begin
+    for i in 1..n loop
+        findFact(i);
+    end loop;
+end;
+/
+    
+
+7.
+
+
+declare
+    n int:=45424244;
+    rev int;
+    temp int;
+    ld int;
+    procedure findFact(x in int,r out int) is
+    begin
+        temp:=x;
+        r:=0;
+        while temp>0 loop
+            ld:=mod(temp,10);
+            r:=r*10+ld;
+            temp:=floor(temp/10);
+        end loop;
+        
+    end;
+begin
+    findFact(n,rev);
+    dbms_output.put_line('Reverse is: '||rev);
+    if(rev=n) then
+    dbms_output.put_line('Is palindrome');
+    else
+    dbms_output.put_line('Is not palindrome');
+    end if;
+end;
+/
+
+8.
+
+declare
+    n int:=15;
+    c int;
+    temp int;
+    ld int;
+    r int;
+    procedure findLength(x in int,c out int) is
+    begin
+        temp:=x;
+        c:=0;
+        while temp>0 loop
+            temp:=floor(temp/10);
+            c:=c+1;
+        end loop;
+    end;
+    procedure isArmstrong(x in int,c in int) is
+    begin
+        temp:=x;
+        r:=0;
+        while temp>0 loop
+            ld:=power(mod(temp,10),c);
+            r:=r+ld;
+            temp:=floor(temp/10);
+        end loop;
+        if(r=x) then
+            dbms_output.put_line('Armstrong Number');
+        else
+            dbms_output.put_line('Not Armstrong Number');
+        end if;
+    end;
+begin
+    findLength(n,c);
+    isArmstrong(n,c);
+
+end;
+/
+    
+9.
+
+declare
+    n int:=10;
+    s int;
+    temp int;
+    ld int;
+    procedure findSum(x in int) is
+    begin
+        temp:=x;
+        s:=0;
+        for i in 1..x loop
+            s:=s+i;
+        end loop;
+        insert into Numbers values(x,s);
+    end;
+begin
+    findSum(n);
+end;
+/
+select * from Numbers;
+
+10.
+
+declare
+    n int:=10;
+    procedure findLoops(x in int) is
+    begin
+        insert into Roots values(x,sqrt(x),power(x,(1/3)));
+    end;
+begin
+    findLoops(n);
+end;
+/
+select * from Roots;
+
+    
+
+
+        
+        
+    
+
+

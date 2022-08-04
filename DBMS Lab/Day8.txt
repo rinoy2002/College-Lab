@@ -1,0 +1,124 @@
+1.
+
+a.
+
+mysql> select round(cos(abs(-10)*exp(2)));
++-----------------------------+
+| round(cos(abs(-10)*exp(2))) |
++-----------------------------+
+|                           0 |
++-----------------------------+
+1 row in set (0.00 sec)
+
+b.
+
+mysql> select truncate(log(10,sqrt(mod(power(5,4),14))),2);
++----------------------------------------------+
+| truncate(log(10,sqrt(mod(power(5,4),14))),2) |
++----------------------------------------------+
+|                                         0.47 |
++----------------------------------------------+
+1 row in set (0.00 sec)
+
+
+c.
+
+mysql> select sin(30)+tan(60);
++---------------------+
+| sin(30)+tan(60)     |
++---------------------+
+| -0.6679912347132988 |
++---------------------+
+1 row in set (0.00 sec)
+
+2.
+
+mysql> select floor(12.9),ceil(12.9);
++-------------+------------+
+| floor(12.9) | ceil(12.9) |
++-------------+------------+
+|          12 |         13 |
++-------------+------------+
+1 row in set (0.00 sec)
+
+3.
+
+mysql> select upper(name),lower(name),initcap(name) from Instructor;
++-------------+-------------+---------------+
+| upper(name) | lower(name) | initcap(name) |
++-------------+-------------+---------------+
+| SRINIVASAN  | srinivasan  | Srinivasan    |
+| WU          | wu          | Wu            |
+| MOZART      | mozart      | Mozart        |
+| EINSTEIN    | einstein    | Einstein      |
+| EL SAID     | el said     | El Said       |
+| GOLD        | gold        | Gold          |
+| KATZ        | katz        | Katz          |
+| CALIFIERI   | califieri   | Califieri     |
+| CRICK       | crick       | Crick         |
+| BRANDT      | brandt      | Brandt        |
+| KIM         | kim         | Kim           |
++-------------+-------------+---------------+
+11 rows in set (0.04 sec)
+
+4.
+
+mysql> select replace(course_id,'-','/') from Course;
++----------------------------+
+| replace(course_id,'-','/') |
++----------------------------+
+| BIO/101                    |
+| BIO/301                    |
+| CS/101                     |
+| CS/190                     |
+| CS/315                     |
+| CS/319                     |
+| CS/347                     |
+| EE/181                     |
+| FIN/201                    |
+| HIS/351                    |
+| MU/199                     |
+| PHY/101                    |
++----------------------------+
+12 rows in set (0.00 sec)
+
+5.
+
+mysql> select concat (concat(name,' '),dept_name) from Instructor;
++-------------------------------------+
+| concat (concat(name,' '),dept_name) |
++-------------------------------------+
+| Srinivasan Comp. Sci.               |
+| Wu Finance                          |
+| Mozart Music                        |
+| Einstein Physics                    |
+| El Said History                     |
+| Gold Physics                        |
+| Katz Comp. Sci.                     |
+| Califieri History                   |
+| Crick Biology                       |
+| Brandt Comp. Sci.                   |
+| Kim Elec. Eng.                      |
++-------------------------------------+
+11 rows in set (0.00 sec)
+
+6.
+
+mysql> select substr(course_id,-3) from Course;
++----------------------+
+| substr(course_id,-3) |
++----------------------+
+| 101                  |
+| 301                  |
+| 101                  |
+| 190                  |
+| 315                  |
+| 319                  |
+| 347                  |
+| 181                  |
+| 201                  |
+| 351                  |
+| 199                  |
+| 101                  |
++----------------------+
+12 rows in set (0.01 sec)

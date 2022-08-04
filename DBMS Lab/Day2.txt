@@ -1,0 +1,312 @@
+1.
+
+mysql> use College
+Database changed
+
+mysql> create table Classroom(building varchar(50),room_number int,capacity int,primary key(room_number));
+Query OK, 0 rows affected (0.43 sec)
+
+mysql> desc Classroom;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| building    | varchar(50) | YES  |     | NULL    |       |
+| room_number | int         | NO   | PRI | NULL    |       |
+| capacity    | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> create table Department(dept_name varchar(20),building varchar(50),budget int,primary key(dept_name));
+Query OK, 0 rows affected (0.42 sec)
+
+mysql> desc Department;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| dept_name | varchar(20) | NO   | PRI | NULL    |       |
+| building  | varchar(50) | YES  |     | NULL    |       |
+| budget    | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+mysql> create table Course(course_id varchar(10),title varchar(20),dept_name varchar(20),credits int,primary key(course_id),foreign key(dept_name) references Department(dept_name));
+Query OK, 0 rows affected (0.48 sec)
+
+mysql> desc Course;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| course_id | varchar(10) | NO   | PRI | NULL    |       |
+| title     | varchar(50) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| credits   | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> create table Instructor(ID int,name varchar(20),dept_name varchar(20),salary int,primary key(ID),foreign key(dept_name) references Department(dept_name))
+;
+Query OK, 0 rows affected (0.42 sec)
+
+mysql> desc Instructor;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   | PRI | NULL    |       |
+| name      | varchar(20) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| salary    | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
+mysql> create table Student(ID int,name varchar(20),dept_name varchar(20),tot_cred int,primary key(ID),foreign key(dept_name) references Department(dept_name));
+Query OK, 0 rows affected (0.59 sec)
+
+mysql> desc Student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   | PRI | NULL    |       |
+| name      | varchar(20) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| tot_cred  | int         | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table Section(course_id varchar(10),sec_id int,semester varchar(10),year int,building varchar(50),room_number int,foreign key(course_id) references Course(course_id));
+Query OK, 0 rows affected (0.72 sec)
+
+mysql> desc Section;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| course_id   | varchar(10) | YES  | MUL | NULL    |       |
+| sec_id      | int         | NO   |     | NULL    |       |
+| semester    | varchar(10) | YES  |     | NULL    |       |
+| year        | int         | YES  |     | NULL    |       |
+| building    | varchar(50) | YES  |     | NULL    |       |
+| room_number | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> create table Teaches(ID int,course_id varchar(10),sec_id int,semester varchar(10),year int,foreign key(course_id) references Course(course_id));
+Query OK, 0 rows affected (1.80 sec)
+
+mysql> desc Teaches;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   |     | NULL    |       |
+| course_id | varchar(10) | YES  | MUL | NULL    |       |
+| sec_id    | int         | YES  | MUL | NULL    |       |
+| semester  | varchar(10) | YES  |     | NULL    |       |
+| year      | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create table Takes(ID int,course_id varchar(10),sec_id int,semester varchar(10),year int,grade char(5),foreign key(course_id) references Course(course_id));
+Query OK, 0 rows affected (1.84 sec)
+
+mysql> desc Takes;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   |     | NULL    |       |
+| course_id | varchar(10) | YES  | MUL | NULL    |       |
+| sec_id    | int         | YES  | MUL | NULL    |       |
+| semester  | varchar(10) | YES  |     | NULL    |       |
+| year      | int         | YES  |     | NULL    |       |
+| grade     | char(5)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+
+2.
+
+a)
+
+mysql> alter table Course modify course_id varchar(20);
+Query OK, 0 rows affected (0.35 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Course;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| course_id | varchar(20) | NO   | PRI | NULL    |       |
+| title     | varchar(50) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| credits   | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+b)
+
+mysql> alter table Department add dept_no varchar(4);
+Query OK, 0 rows affected (0.29 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Department;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| dept_name | varchar(20) | NO   | PRI | NULL    |       |
+| building  | varchar(50) | YES  |     | NULL    |       |
+| budget    | int         | YES  |     | NULL    |       |
+| dept_no   | varchar(4)  | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+c)
+
+mysql> alter table Student modify name varchar(20) not null;
+Query OK, 0 rows affected (1.28 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   | PRI | NULL    |       |
+| name      | varchar(20) | NO   |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| tot_cred  | int         | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+d)
+
+mysql> alter table Classroom modify capacity int default 50;
+Query OK, 0 rows affected (0.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Classroom;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| building    | varchar(50) | YES  |     | NULL    |       |
+| room_number | int         | NO   | PRI | NULL    |       |
+| capacity    | int         | YES  |     | 50      |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+e)
+
+
+f)
+
+mysql> alter table Instructor add constraint chk_Instr check (salary > 50000);
+
+g)
+
+mysql> alter table Student add dob date;
+mysql> desc Student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   | PRI | NULL    |       |
+| name      | varchar(20) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| tot_cred  | int         | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+3.
+
+a)
+
+mysql> alter table Course modify course_id varchar(10);
+
+mysql> desc Course;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| course_id | varchar(10) | NO   | PRI | NULL    |       |
+| title     | varchar(50) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| credits   | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+b)
+
+mysql> alter table Department drop column dept_no;
+Query OK, 0 rows affected (1.57 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Department;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| dept_name | varchar(20) | NO   | PRI | NULL    |       |
+| building  | varchar(50) | YES  |     | NULL    |       |
+| budget    | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+c)
+
+mysql> alter table Student modify name varchar(20) null;
+Query OK, 0 rows affected (1.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Student;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   | PRI | NULL    |       |
+| name      | varchar(20) | YES  |     | NULL    |       |
+| dept_name | varchar(20) | YES  | MUL | NULL    |       |
+| tot_cred  | int         | YES  |     | NULL    |       |
+| DOB       | date        | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+d)
+
+mysql> alter table Classroom modify capacity int default NULL;
+Query OK, 0 rows affected (0.14 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Classroom;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| building    | varchar(50) | YES  |     | NULL    |       |
+| room_number | int         | NO   | PRI | NULL    |       |
+| capacity    | int         | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+e)
+
+
+f)
+
+mysql> alter table Instructor drop constraint chk_Instr;
+
+
+
+4.
+
+
+mysql> rename table Takes to Subject;
+Query OK, 0 rows affected (0.24 sec)
+
+mysql> desc Subject;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| ID        | int         | NO   |     | NULL    |       |
+| course_id | varchar(10) | YES  | MUL | NULL    |       |
+| sec_id    | int         | YES  | MUL | NULL    |       |
+| semester  | varchar(10) | YES  |     | NULL    |       |
+| year      | int         | YES  |     | NULL    |       |
+| grade     | char(5)     | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)

@@ -1,0 +1,738 @@
+1.
+
+Classroom
+
+mysql> insert into Classroom values('Packard',101,500);
+Query OK, 1 row affected (1.06 sec)
+
+mysql> insert into Classroom values('Painter',514,10);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Classroom values('Taylor',3128,70);
+Query OK, 1 row affected (1.20 sec)
+
+mysql> insert into Classroom values('Watson',100,30);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Classroom values('Watson',120,50);
+Query OK, 1 row affected (0.19 sec)
+
+mysql> select * from Classroom;
++----------+-------------+----------+
+| building | room_number | capacity |
++----------+-------------+----------+
+| Watson   |         100 |       30 |
+| Packard  |         101 |      500 |
+| Watson   |         120 |       50 |
+| Painter  |         514 |       10 |
+| Taylor   |        3128 |       70 |
++----------+-------------+----------+
+5 rows in set (0.00 sec)
+
+
+Department
+
+mysql> insert into Department values('Biology','Watson',90000);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Department values('Comp. Sci.','Taylor',100000);
+Query OK, 1 row affected (0.63 sec)
+
+mysql> insert into Department values('Elec. Eng.','Taylor',85000);
+Query OK, 1 row affected (0.74 sec)
+
+mysql> insert into Department values('Finance','Painter',120000);
+Query OK, 1 row affected (0.74 sec)
+
+mysql> insert into Department values('History','Painter',50000);
+Query OK, 1 row affected (0.25 sec)
+
+mysql> insert into Department values('Music','Packard',80000);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Department values('Physics','Watson',70000);
+Query OK, 1 row affected (2.00 sec)
+
+mysql> select * from Department;
++------------+----------+--------+
+| dept_name  | building | budget |
++------------+----------+--------+
+| Biology    | Watson   |  90000 |
+| Comp. Sci. | Taylor   | 100000 |
+| Elec. Eng. | Taylor   |  85000 |
+| Finance    | Painter  | 120000 |
+| History    | Painter  |  50000 |
+| Music      | Packard  |  80000 |
+| Physics    | Watson   |  70000 |
++------------+----------+--------+
+7 rows in set (0.00 sec)
+
+
+Course
+
+mysql> insert into Course values('BIO-101','Intro. to Biology','Biology',4);
+Query OK, 1 row affected (1.05 sec)
+
+mysql> insert into Course values('BIO-301','Genetics','Biology',4);
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Course values('BIO-399','Computational Biology','Biology',3);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Course values('CS-101','Intro. to Computer Science','Comp. Sci.',4);
+Query OK, 1 row affected (0.51 sec)
+
+mysql> insert into Course values('CS-190','Game Design','Comp. Sci.',4);
+Query OK, 1 row affected (0.26 sec)
+
+mysql> insert into Course values('CS-315','Robotics','Comp. Sci.',3);
+Query OK, 1 row affected (0.41 sec)
+
+mysql> insert into Course values('CS-319','Image Processing','Comp. Sci.',3);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into Course values('CS-347','Database System Concepts','Comp. Sci.',3);
+
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into Course values('EE-181','Intro. to Digital Systems','Elec. Eng.',3);
+Query OK, 1 row affected (0.39 sec)
+
+mysql> insert into Course values('FIN-201','Investment Banking','Finance',3);
+Query OK, 1 row affected (0.55 sec)
+
+mysql> insert into Course values('HIS-351','World History','History',3);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into Course values('MU-199','Music Video Production','Music',3);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into Course values('PHY-101','Physical Principles','Physics',4);
+Query OK, 1 row affected (0.31 sec)
+
+mysql> select * from Course;
++-----------+----------------------------+------------+---------+
+| course_id | title                      | dept_name  | credits |
++-----------+----------------------------+------------+---------+
+| BIO-101   | Intro. to Biology          | Biology    |       4 |
+| BIO-301   | Genetics                   | Biology    |       4 |
+| BIO-399   | Computational Biology      | Biology    |       3 |
+| CS-101    | Intro. to Computer Science | Comp. Sci. |       4 |
+| CS-190    | Game Design                | Comp. Sci. |       4 |
+| CS-315    | Robotics                   | Comp. Sci. |       3 |
+| CS-319    | Image Processing           | Comp. Sci. |       3 |
+| CS-347    | Database System Concepts   | Comp. Sci. |       3 |
+| EE-181    | Intro. to Digital Systems  | Elec. Eng. |       3 |
+| FIN-201   | Investment Banking         | Finance    |       3 |
+| HIS-351   | World History              | History    |       3 |
+| MU-199    | Music Video Production     | Music      |       3 |
+| PHY-101   | Physical Principles        | Physics    |       4 |
++-----------+----------------------------+------------+---------+
+13 rows in set (0.00 sec)
+
+
+Instructor
+
+mysql> insert into Instructor values(10101,'Srinivasan','Comp. Sci.',65000);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into Instructor values(12121,'Wu','Finance',90000);
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert into Instructor values(15151, 'Mozart', 'Music', 40000);
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert into Instructor values(22222, 'Einstein', 'Physics', 95000);
+Query OK, 1 row affected (0.43 sec)
+
+mysql> insert into Instructor values(32343, 'El Said', 'History', 60000);
+Query OK, 1 row affected (0.54 sec)
+
+mysql> insert into Instructor values(33456, 'Gold', 'Physics', 87000);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Instructor values(45565, 'Katz', 'Comp. Sci.', 75000);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Instructor values(58583, 'Califieri', 'History', 62000);
+Query OK, 1 row affected (0.49 sec)
+
+mysql> insert into Instructor values(76543, 'Singh', 'Finance', 80000);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Instructor values(76766, 'Crick', 'Biology', 72000);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Instructor values(83821, 'Brandt', 'Comp. Sci.', 92000);
+Query OK, 1 row affected (0.56 sec)
+
+mysql> insert into Instructor values(98345, 'Kim', 'Elec. Eng.', 80000);
+Query OK, 1 row affected (0.71 sec)
+
+mysql> select * from Instructor;
++-------+------------+------------+--------+
+| ID    | name       | dept_name  | salary |
++-------+------------+------------+--------+
+| 10101 | Srinivasan | Comp. Sci. |  65000 |
+| 12121 | Wu         | Finance    |  90000 |
+| 15151 | Mozart     | Music      |  40000 |
+| 22222 | Einstein   | Physics    |  95000 |
+| 32343 | El Said    | History    |  60000 |
+| 33456 | Gold       | Physics    |  87000 |
+| 45565 | Katz       | Comp. Sci. |  75000 |
+| 58583 | Califieri  | History    |  62000 |
+| 76543 | Singh      | Finance    |  80000 |
+| 76766 | Crick      | Biology    |  72000 |
+| 83821 | Brandt     | Comp. Sci. |  92000 |
+| 98345 | Kim        | Elec. Eng. |  80000 |
++-------+------------+------------+--------+
+12 rows in set (0.00 sec)
+
+Student
+
+mysql> insert into Student values(00128, 'Zhang', 'Comp. Sci.', 102, DATE '2000-07-24');
+Query OK, 1 row affected (1.11 sec)
+
+mysql> insert into Student values(12345, 'Shankar', 'Comp. Sci.', 32, DATE '2001-01-01');
+Query OK, 1 row affected (0.26 sec)
+
+mysql> insert into Student values(19991, 'Brandt', 'History', 80, DATE '2002-06-10');
+Query OK, 1 row affected (0.37 sec)
+
+mysql> insert into Student values(23121, 'Chavez', 'Finance', 110, DATE '2003-05-25');
+Query OK, 1 row affected (0.24 sec)
+
+mysql> insert into Student values(44553, 'Peltier', 'Physics', 56, DATE '2004-04-30');
+Query OK, 1 row affected (0.66 sec)
+
+mysql> insert into Student values(45678, 'Levy', 'Physics', 46, DATE '1999-08-27');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into Student values(54321, 'Williams', 'Comp. Sci.', 54, DATE '2006-10-01');
+Query OK, 1 row affected (0.68 sec)
+
+mysql> insert into Student values(55739, 'Sanchez', 'Music', 38, DATE '1995-02-07');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into Student values(70557, 'Snow', 'Physics', 0, DATE '2008-04-08');
+Query OK, 1 row affected (0.17 sec)
+
+mysql> insert into Student values(76543, 'Brown', 'Comp. Sci.', 58, DATE '2009-03-09');
+Query OK, 1 row affected (0.58 sec)
+
+mysql> insert into Student values(76653, 'Aoi', 'Elec. Eng.', 60, DATE '2010-05-10');
+Query OK, 1 row affected (1.61 sec)
+
+mysql> insert into Student values(98765, 'Bourikas', 'Elec. Eng.', 98, DATE '2011-06-07');
+Query OK, 1 row affected (0.65 sec)
+
+mysql> insert into Student values(98988, 'Tanaka', 'Biology', 120, DATE '2012-04-08');
+Query OK, 1 row affected (0.77 sec)
+
+mysql> select * from Student;
++-------+----------+------------+----------+------------+
+| ID    | name     | dept_name  | tot_cred | DOB        |
++-------+----------+------------+----------+------------+
+|   128 | Zhang    | Comp. Sci. |      102 | 2000-07-24 |
+| 12345 | Shankar  | Comp. Sci. |       32 | 2001-01-01 |
+| 19991 | Brandt   | History    |       80 | 2002-06-10 |
+| 23121 | Chavez   | Finance    |      110 | 2003-05-25 |
+| 44553 | Peltier  | Physics    |       56 | 2004-04-30 |
+| 45678 | Levy     | Physics    |       46 | 1999-08-27 |
+| 54321 | Williams | Comp. Sci. |       54 | 2006-10-01 |
+| 55739 | Sanchez  | Music      |       38 | 1995-02-07 |
+| 70557 | Snow     | Physics    |        0 | 2008-04-08 |
+| 76543 | Brown    | Comp. Sci. |       58 | 2009-03-09 |
+| 76653 | Aoi      | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas | Elec. Eng. |       98 | 2011-06-07 |
+| 98988 | Tanaka   | Biology    |      120 | 2012-04-08 |
++-------+----------+------------+----------+------------+
+13 rows in set (0.00 sec)
+
+Section
+
+mysql> insert into Section values('BIO-101', 1, 'Summer', 2009, 'Painter', 514);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into Section values('BIO-301', 1, 'Summer', 2010, 'Painter', 514);
+Query OK, 1 row affected (0.26 sec)
+
+mysql> insert into Section values('CS-101', 1, 'Fall', 2009, 'Packard', 101);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into Section values('CS-101', 1, 'Spring', 2010, 'Packard', 101);
+Query OK, 1 row affected (0.28 sec)
+
+mysql> insert into Section values('CS-190', 1, 'Spring', 2009, 'Taylor', 3128);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Section values('CS-190', 2, 'Spring', 2009, 'Taylor', 3128);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Section values('CS-315', 1, 'Spring', 2010, 'Watson', 120);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Section values('CS-319', 1, 'Spring', 2010, 'Watson', 100);
+Query OK, 1 row affected (0.10 sec)
+
+mysql> insert into Section values('CS-319', 2, 'Spring', 2010, 'Taylor', 3128);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Section values('CS-347', 1, 'Fall', 2009, 'Taylor', 3128);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into Section values('EE-181', 1, 'Spring', 2009, 'Taylor', 3128);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Section values('FIN-201', 1, 'Spring', 2010, 'Packard', 101);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Section values('HIS-351', 1, 'Spring', 2010, 'Painter', 514);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into Section values('MU-199', 1, 'Spring', 2010, 'Packard', 101);
+Query OK, 1 row affected (0.45 sec)
+
+mysql> insert into Section values('PHY-101', 1, 'Fall', 2009, 'Watson', 100);
+Query OK, 1 row affected (0.55 sec)
+
+mysql> select * from Section;
++-----------+--------+----------+------+----------+-------------+
+| course_id | sec_id | semester | year | building | room_number |
++-----------+--------+----------+------+----------+-------------+
+| BIO-101   |      1 | Summer   | 2009 | Painter  |         514 |
+| BIO-301   |      1 | Summer   | 2010 | Painter  |         514 |
+| CS-101    |      1 | Fall     | 2009 | Packard  |         101 |
+| CS-101    |      1 | Spring   | 2010 | Packard  |         101 |
+| CS-190    |      1 | Spring   | 2009 | Taylor   |        3128 |
+| CS-190    |      2 | Spring   | 2009 | Taylor   |        3128 |
+| CS-315    |      1 | Spring   | 2010 | Watson   |         120 |
+| CS-319    |      1 | Spring   | 2010 | Watson   |         100 |
+| CS-319    |      2 | Spring   | 2010 | Taylor   |        3128 |
+| CS-347    |      1 | Fall     | 2009 | Taylor   |        3128 |
+| EE-181    |      1 | Spring   | 2009 | Taylor   |        3128 |
+| FIN-201   |      1 | Spring   | 2010 | Packard  |         101 |
+| HIS-351   |      1 | Spring   | 2010 | Painter  |         514 |
+| MU-199    |      1 | Spring   | 2010 | Packard  |         101 |
+| PHY-101   |      1 | Fall     | 2009 | Watson   |         100 |
++-----------+--------+----------+------+----------+-------------+
+15 rows in set (0.00 sec)
+
+Teaches
+
+mysql> insert into Teaches values(10101, 'CS-101', 1, 'Fall', 2009);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Teaches values(10101, 'CS-315', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Teaches values(10101, 'CS-347', 1, 'Fall', 2009);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Teaches values(12121, 'FIN-201', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.20 sec)
+
+mysql> insert into Teaches values(15151, 'MU-199', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.41 sec)
+
+mysql> insert into Teaches values(22222, 'PHY-101', 1, 'Fall', 2009);
+Query OK, 1 row affected (0.22 sec)
+
+mysql> insert into Teaches values(32343, 'HIS-351', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.37 sec)
+
+mysql> insert into Teaches values(45565, 'CS-101', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.18 sec)
+
+mysql> insert into Teaches values(45565, 'CS-319', 1, 'Spring', 2010);
+Query OK, 1 row affected (0.38 sec)
+
+mysql> insert into Teaches values(76766, 'BIO-101', 1, 'Summer', 2009);
+Query OK, 1 row affected (0.28 sec)
+
+mysql>  insert into Teaches values(76766, 'BIO-301', 1, 'Summer', 2010);
+Query OK, 1 row affected (0.23 sec)
+
+mysql> insert into Teaches values(83821, 'CS-190', 1, 'Spring', 2009);
+Query OK, 1 row affected (0.23 sec)
+
+mysql> insert into Teaches values(83821, 'CS-190', 2, 'Spring', 2009);
+Query OK, 1 row affected (0.45 sec)
+
+mysql> insert into Teaches values(83821, 'CS-319', 2, 'Spring', 2010);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into Teaches values(98345, 'EE-181', 1, 'Spring', 2009);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> select * from Teaches;
++-------+-----------+--------+----------+------+
+| ID    | course_id | sec_id | semester | year |
++-------+-----------+--------+----------+------+
+| 10101 | CS-101    |      1 | Fall     | 2009 |
+| 10101 | CS-315    |      1 | Spring   | 2010 |
+| 10101 | CS-347    |      1 | Fall     | 2009 |
+| 12121 | FIN-201   |      1 | Spring   | 2010 |
+| 15151 | MU-199    |      1 | Spring   | 2010 |
+| 22222 | PHY-101   |      1 | Fall     | 2009 |
+| 32343 | HIS-351   |      1 | Spring   | 2010 |
+| 45565 | CS-101    |      1 | Spring   | 2010 |
+| 45565 | CS-319    |      1 | Spring   | 2010 |
+| 76766 | BIO-101   |      1 | Summer   | 2009 |
+| 76766 | BIO-301   |      1 | Summer   | 2010 |
+| 83821 | CS-190    |      1 | Spring   | 2009 |
+| 83821 | CS-190    |      2 | Spring   | 2009 |
+| 83821 | CS-319    |      2 | Spring   | 2010 |
+| 98345 | EE-181    |      1 | Spring   | 2009 |
++-------+-----------+--------+----------+------+
+15 rows in set (0.00 sec)
+
+
+Subject
+
+mysql> insert into Subject values(00128, 'CS-101', 1, 'Fall', 2009, 'A');
+Query OK, 1 row affected (1.24 sec)
+
+mysql> insert into Subject values(00128, 'CS-347', 1, 'Fall', 2009, 'A-');
+Query OK, 1 row affected (0.68 sec)
+
+mysql> insert into Subject values(12345, 'CS-101', 1, 'Fall', 2009, 'C');
+Query OK, 1 row affected (0.28 sec)
+
+mysql> insert into Subject values(12345, 'CS-190', 2, 'Spring', 2009, 'A');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Subject values(12345, 'CS-315', 1, 'Spring', 2010, 'A');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into Subject values(12345, 'CS-347', 1, 'Fall', 2009, 'A');
+Query OK, 1 row affected (0.39 sec)
+
+mysql> insert into Subject values(19991, 'HIS-351', 1, 'Spring', 2010, 'B');
+Query OK, 1 row affected (0.80 sec)
+
+mysql> insert into Subject values(23121, 'FIN-201', 1, 'Spring', 2010, 'C+');
+Query OK, 1 row affected (0.65 sec)
+
+mysql> insert into Subject values(44553, 'PHY-101', 1, 'Fall', 2009, 'B-');
+Query OK, 1 row affected (0.54 sec)
+
+mysql> insert into Subject values(45678, 'CS-101', 1, 'Fall', 2009, 'F');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Subject values(45678, 'CS-101', 1, 'Spring', 2010, 'B+');
+Query OK, 1 row affected (0.57 sec)
+
+mysql> insert into Subject values(45678, 'CS-319', 1, 'Spring', 2010, 'B');
+Query OK, 1 row affected (0.72 sec)
+
+mysql> insert into Subject values(54321, 'CS-101', 1, 'Fall', 2009, 'A-');
+Query OK, 1 row affected (0.38 sec)
+
+mysql> insert into Subject values(54321, 'CS-190', 2, 'Spring', 2009, 'B+');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into Subject values(55739, 'MU-199', 1, 'Spring', 2010, 'A-');
+Query OK, 1 row affected (0.81 sec)
+
+mysql> insert into Subject values(76543, 'CS-101', 1, 'Fall', 2009, 'A');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into Subject values(76543, 'CS-319', 2, 'Spring', 2010, 'A');
+Query OK, 1 row affected (0.34 sec)
+
+mysql> insert into Subject values(76653, 'EE-181', 1, 'Spring', 2009, 'C');
+Query OK, 1 row affected (0.31 sec)
+
+mysql> insert into Subject values(98765, 'CS-101', 1, 'Fall', 2009, 'C-');
+Query OK, 1 row affected (1.51 sec)
+
+mysql> insert into Subject values(98765, 'CS-315', 1, 'Spring', 2010, 'B');
+Query OK, 1 row affected (0.51 sec)
+
+mysql> insert into Subject values(98988, 'BIO-101', 1, 'Summer', 2009, 'A');
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into Subject values(98988, 'BIO-301', 1, 'Summer', 2010, null);
+Query OK, 1 row affected (0.70 sec)
+
+mysql> select * from Subject;
++-------+-----------+--------+----------+------+-------+
+| ID    | course_id | sec_id | semester | year | grade |
++-------+-----------+--------+----------+------+-------+
+|   128 | CS-101    |      1 | Fall     | 2009 | A     |
+|   128 | CS-347    |      1 | Fall     | 2009 | A-    |
+| 12345 | CS-101    |      1 | Fall     | 2009 | C     |
+| 12345 | CS-190    |      2 | Spring   | 2009 | A     |
+| 12345 | CS-315    |      1 | Spring   | 2010 | A     |
+| 12345 | CS-347    |      1 | Fall     | 2009 | A     |
+| 19991 | HIS-351   |      1 | Spring   | 2010 | B     |
+| 23121 | FIN-201   |      1 | Spring   | 2010 | C+    |
+| 44553 | PHY-101   |      1 | Fall     | 2009 | B-    |
+| 45678 | CS-101    |      1 | Fall     | 2009 | F     |
+| 45678 | CS-101    |      1 | Spring   | 2010 | B+    |
+| 45678 | CS-319    |      1 | Spring   | 2010 | B     |
+| 54321 | CS-101    |      1 | Fall     | 2009 | A-    |
+| 54321 | CS-190    |      2 | Spring   | 2009 | B+    |
+| 55739 | MU-199    |      1 | Spring   | 2010 | A-    |
+| 76543 | CS-101    |      1 | Fall     | 2009 | A     |
+| 76543 | CS-319    |      2 | Spring   | 2010 | A     |
+| 76653 | EE-181    |      1 | Spring   | 2009 | C     |
+| 98765 | CS-101    |      1 | Fall     | 2009 | C-    |
+| 98765 | CS-315    |      1 | Spring   | 2010 | B     |
+| 98988 | BIO-101   |      1 | Summer   | 2009 | A     |
+| 98988 | BIO-301   |      1 | Summer   | 2010 | NULL  |
++-------+-----------+--------+----------+------+-------+
+22 rows in set (0.00 sec)
+
+
+2.
+
+a)
+
+mysql> update Student set name = 'Mozart' where ID=45678;
+Query OK, 1 row affected (0.54 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Student;
++-------+----------+------------+----------+------------+
+| ID    | name     | dept_name  | tot_cred | DOB        |
++-------+----------+------------+----------+------------+
+|   128 | Zhang    | Comp. Sci. |      102 | 2000-07-24 |
+| 12345 | Shankar  | Comp. Sci. |       32 | 2001-01-01 |
+| 19991 | Brandt   | History    |       80 | 2002-06-10 |
+| 23121 | Chavez   | Finance    |      110 | 2003-05-25 |
+| 44553 | Peltier  | Physics    |       56 | 2004-04-30 |
+| 45678 | Mozart   | Physics    |       46 | 1999-08-27 |
+| 54321 | Williams | Comp. Sci. |       54 | 2006-10-01 |
+| 55739 | Sanchez  | Music      |       38 | 1995-02-07 |
+| 70557 | Snow     | Physics    |        0 | 2008-04-08 |
+| 76543 | Brown    | Comp. Sci. |       58 | 2009-03-09 |
+| 76653 | Aoi      | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas | Elec. Eng. |       98 | 2011-06-07 |
+| 98988 | Tanaka   | Biology    |      120 | 2012-04-08 |
++-------+----------+------------+----------+------------+
+13 rows in set (0.00 sec)
+
+b)
+
+mysql> update Department set budget = 100000, building = 'Taylor' where dept_name= 'History';
+Query OK, 1 row affected (0.34 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Department;
++------------+----------+--------+
+| dept_name  | building | budget |
++------------+----------+--------+
+| Biology    | Watson   |  90000 |
+| Comp. Sci. | Taylor   | 100000 |
+| Elec. Eng. | Taylor   |  85000 |
+| Finance    | Painter  | 120000 |
+| History    | Taylor   | 100000 |
+| Music      | Packard  |  80000 |
+| Physics    | Watson   |  70000 |
++------------+----------+--------+
+7 rows in set (0.00 sec)
+
+c)
+
+mysql> update Instructor set salary = salary * 1.1;
+Query OK, 12 rows affected (0.10 sec)
+Rows matched: 12  Changed: 12  Warnings: 0
+
+mysql> select * from Instructor;
++-------+------------+------------+--------+
+| ID    | name       | dept_name  | salary |
++-------+------------+------------+--------+
+| 10101 | Srinivasan | Comp. Sci. |  71500 |
+| 12121 | Wu         | Finance    |  99000 |
+| 15151 | Mozart     | Music      |  44000 |
+| 22222 | Einstein   | Physics    | 104500 |
+| 32343 | El Said    | History    |  66000 |
+| 33456 | Gold       | Physics    |  95700 |
+| 45565 | Katz       | Comp. Sci. |  82500 |
+| 58583 | Califieri  | History    |  68200 |
+| 76543 | Singh      | Finance    |  88000 |
+| 76766 | Crick      | Biology    |  79200 |
+| 83821 | Brandt     | Comp. Sci. | 101200 |
+| 98345 | Kim        | Elec. Eng. |  88000 |
++-------+------------+------------+--------+
+12 rows in set (0.00 sec)
+
+d)
+
+mysql> update Course set credits = 4 where dept_name = 'Comp. Sci.';
+Query OK, 3 rows affected (0.08 sec)
+Rows matched: 5  Changed: 3  Warnings: 0
+
+mysql> select * from Course;
++-----------+----------------------------+------------+---------+
+| course_id | title                      | dept_name  | credits |
++-----------+----------------------------+------------+---------+
+| BIO-101   | Intro. to Biology          | Biology    |       4 |
+| BIO-301   | Genetics                   | Biology    |       4 |
+| BIO-399   | Computational Biology      | Biology    |       3 |
+| CS-101    | Intro. to Computer Science | Comp. Sci. |       4 |
+| CS-190    | Game Design                | Comp. Sci. |       4 |
+| CS-315    | Robotics                   | Comp. Sci. |       4 |
+| CS-319    | Image Processing           | Comp. Sci. |       4 |
+| CS-347    | Database System Concepts   | Comp. Sci. |       4 |
+| EE-181    | Intro. to Digital Systems  | Elec. Eng. |       3 |
+| FIN-201   | Investment Banking         | Finance    |       3 |
+| HIS-351   | World History              | History    |       3 |
+| MU-199    | Music Video Production     | Music      |       3 |
+| PHY-101   | Physical Principles        | Physics    |       4 |
++-----------+----------------------------+------------+---------+
+13 rows in set (0.00 sec)
+
+e)
+
+mysql> update Student set tot_cred = tot_cred + 10 where tot_cred between 20 and 50;
+Query OK, 3 rows affected (0.10 sec)
+Rows matched: 3  Changed: 3  Warnings: 0
+
+mysql> select * from Student;
++-------+----------+------------+----------+------------+
+| ID    | name     | dept_name  | tot_cred | DOB        |
++-------+----------+------------+----------+------------+
+|   128 | Zhang    | Comp. Sci. |      102 | 2000-07-24 |
+| 12345 | Shankar  | Comp. Sci. |       42 | 2001-01-01 |
+| 19991 | Brandt   | History    |       80 | 2002-06-10 |
+| 23121 | Chavez   | Finance    |      110 | 2003-05-25 |
+| 44553 | Peltier  | Physics    |       56 | 2004-04-30 |
+| 45678 | Mozart   | Physics    |       56 | 1999-08-27 |
+| 54321 | Williams | Comp. Sci. |       54 | 2006-10-01 |
+| 55739 | Sanchez  | Music      |       48 | 1995-02-07 |
+| 70557 | Snow     | Physics    |        0 | 2008-04-08 |
+| 76543 | Brown    | Comp. Sci. |       58 | 2009-03-09 |
+| 76653 | Aoi      | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas | Elec. Eng. |       98 | 2011-06-07 |
+| 98988 | Tanaka   | Biology    |      120 | 2012-04-08 |
++-------+----------+------------+----------+------------+
+13 rows in set (0.00 sec)
+
+f)
+
+mysql> update Instructor set salary = salary * 1.05 where salary < (select avg(I.salary) from
+(select * from Instructor) as I);
+Query OK, 5 rows affected (1.14 sec)
+Rows matched: 5  Changed: 5  Warnings: 0
+
+mysql> select * from Instructor;
++-------+------------+------------+--------+
+| ID    | name       | dept_name  | salary |
++-------+------------+------------+--------+
+| 10101 | Srinivasan | Comp. Sci. |  75075 |
+| 12121 | Wu         | Finance    |  99000 |
+| 15151 | Mozart     | Music      |  46200 |
+| 22222 | Einstein   | Physics    | 104500 |
+| 32343 | El Said    | History    |  69300 |
+| 33456 | Gold       | Physics    |  95700 |
+| 45565 | Katz       | Comp. Sci. |  82500 |
+| 58583 | Califieri  | History    |  71610 |
+| 76543 | Singh      | Finance    |  88000 |
+| 76766 | Crick      | Biology    |  83160 |
+| 83821 | Brandt     | Comp. Sci. | 101200 |
+| 98345 | Kim        | Elec. Eng. |  88000 |
++-------+------------+------------+--------+
+12 rows in set (0.00 sec)
+
+g)
+
+mysql> update Teaches set year = 2010 where course_id = 'CS-101' and semester = 'Fall';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Teaches;
++-------+-----------+--------+----------+------+
+| ID    | course_id | sec_id | semester | year |
++-------+-----------+--------+----------+------+
+| 10101 | CS-101    |      1 | Fall     | 2010 |
+| 10101 | CS-315    |      1 | Spring   | 2010 |
+| 10101 | CS-347    |      1 | Fall     | 2009 |
+| 12121 | FIN-201   |      1 | Spring   | 2010 |
+| 15151 | MU-199    |      1 | Spring   | 2010 |
+| 22222 | PHY-101   |      1 | Fall     | 2009 |
+| 32343 | HIS-351   |      1 | Spring   | 2010 |
+| 45565 | CS-101    |      1 | Spring   | 2010 |
+| 45565 | CS-319    |      1 | Spring   | 2010 |
+| 76766 | BIO-101   |      1 | Summer   | 2009 |
+| 76766 | BIO-301   |      1 | Summer   | 2010 |
+| 83821 | CS-190    |      1 | Spring   | 2009 |
+| 83821 | CS-190    |      2 | Spring   | 2009 |
+| 83821 | CS-319    |      2 | Spring   | 2010 |
+| 98345 | EE-181    |      1 | Spring   | 2009 |
++-------+-----------+--------+----------+------+
+15 rows in set (0.00 sec)
+
+3.
+
+mysql> delete from Student where tot_cred = 0;
+Query OK, 1 row affected (0.82 sec)
+
+mysql> select * from Student;
++-------+----------+------------+----------+------------+
+| ID    | name     | dept_name  | tot_cred | DOB        |
++-------+----------+------------+----------+------------+
+|   128 | Zhang    | Comp. Sci. |      102 | 2000-07-24 |
+| 12345 | Shankar  | Comp. Sci. |       42 | 2001-01-01 |
+| 19991 | Brandt   | History    |       80 | 2002-06-10 |
+| 23121 | Chavez   | Finance    |      110 | 2003-05-25 |
+| 44553 | Peltier  | Physics    |       56 | 2004-04-30 |
+| 45678 | Mozart   | Physics    |       56 | 1999-08-27 |
+| 54321 | Williams | Comp. Sci. |       54 | 2006-10-01 |
+| 55739 | Sanchez  | Music      |       48 | 1995-02-07 |
+| 76543 | Brown    | Comp. Sci. |       58 | 2009-03-09 |
+| 76653 | Aoi      | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas | Elec. Eng. |       98 | 2011-06-07 |
+| 98988 | Tanaka   | Biology    |      120 | 2012-04-08 |
++-------+----------+------------+----------+------------+
+12 rows in set (0.00 sec)
+
+4.
+
+mysql> delete from Instructor where ID like '765%';
+Query OK, 1 row affected (0.10 sec)
+
+mysql> select * from Instructor;
++-------+------------+------------+--------+
+| ID    | name       | dept_name  | salary |
++-------+------------+------------+--------+
+| 10101 | Srinivasan | Comp. Sci. |  75075 |
+| 12121 | Wu         | Finance    |  99000 |
+| 15151 | Mozart     | Music      |  46200 |
+| 22222 | Einstein   | Physics    | 104500 |
+| 32343 | El Said    | History    |  69300 |
+| 33456 | Gold       | Physics    |  95700 |
+| 45565 | Katz       | Comp. Sci. |  82500 |
+| 58583 | Califieri  | History    |  71610 |
+| 76766 | Crick      | Biology    |  83160 |
+| 83821 | Brandt     | Comp. Sci. | 101200 |
+| 98345 | Kim        | Elec. Eng. |  88000 |
++-------+------------+------------+--------+
+11 rows in set (0.00 sec)
+
+5.
+
+mysql> delete from Course where course_id not in (select course_id from Section);
+Query OK, 1 row affected (0.27 sec)
+
+mysql> select * from Course;
++-----------+----------------------------+------------+---------+
+| course_id | title                      | dept_name  | credits |
++-----------+----------------------------+------------+---------+
+| BIO-101   | Intro. to Biology          | Biology    |       4 |
+| BIO-301   | Genetics                   | Biology    |       4 |
+| CS-101    | Intro. to Computer Science | Comp. Sci. |       4 |
+| CS-190    | Game Design                | Comp. Sci. |       4 |
+| CS-315    | Robotics                   | Comp. Sci. |       4 |
+| CS-319    | Image Processing           | Comp. Sci. |       4 |
+| CS-347    | Database System Concepts   | Comp. Sci. |       4 |
+| EE-181    | Intro. to Digital Systems  | Elec. Eng. |       3 |
+| FIN-201   | Investment Banking         | Finance    |       3 |
+| HIS-351   | World History              | History    |       3 |
+| MU-199    | Music Video Production     | Music      |       3 |
+| PHY-101   | Physical Principles        | Physics    |       4 |
++-----------+----------------------------+------------+---------+
+12 rows in set (0.00 sec)
+

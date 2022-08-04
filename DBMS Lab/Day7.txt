@@ -1,0 +1,145 @@
+1.
+
+mysql> create view yearwise as select * from Section where year = 2009;
+Query OK, 0 rows affected (0.52 sec)
+
+mysql> select * from yearwise;
++-----------+--------+----------+------+----------+-------------+
+| course_id | sec_id | semester | year | building | room_number |
++-----------+--------+----------+------+----------+-------------+
+| BIO-101   |      1 | Summer   | 2009 | Painter  |         514 |
+| CS-101    |      1 | Fall     | 2009 | Packard  |         101 |
+| CS-190    |      1 | Spring   | 2009 | Taylor   |        3128 |
+| CS-190    |      2 | Spring   | 2009 | Taylor   |        3128 |
+| CS-347    |      1 | Fall     | 2009 | Taylor   |        3128 |
+| EE-181    |      1 | Spring   | 2009 | Taylor   |        3128 |
+| PHY-101   |      1 | Fall     | 2009 | Watson   |         100 |
++-----------+--------+----------+------+----------+-------------+
+7 rows in set (0.11 sec)
+
+2.
+
+mysql> create view studentlist as select * from Student order by name;
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> select * from studentlist;
++-------+------------------+------------+----------+------------+
+| ID    | name             | dept_name  | tot_cred | DOB        |
++-------+------------------+------------+----------+------------+
+| 76653 | Aoi              | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas         | Elec. Eng. |       98 | 2011-06-07 |
+| 19991 | Brandt           | History    |       80 | 2002-06-10 |
+| 76543 | Brown            | Comp. Sci. |       58 | 2009-03-09 |
+| 23121 | Chavez           | Finance    |      110 | 2003-05-25 |
+| 45678 | Mozart           | Physics    |       56 | 1999-08-27 |
+| 44553 | Peltier          | Physics    |       56 | 2004-04-30 |
+| 13721 | Rinoy Kuriyakose | Comp. Sci. |      180 | 2002-06-22 |
+| 55739 | Sanchez          | Music      |       48 | 1995-02-07 |
+| 12345 | Shankar          | Comp. Sci. |       42 | 2001-01-01 |
+| 98988 | Tanaka           | Biology    |      120 | 2012-04-08 |
+| 54321 | Williams         | Comp. Sci. |       54 | 2006-10-01 |
+|   128 | Zhang            | Comp. Sci. |      102 | 2000-07-24 |
++-------+------------------+------------+----------+------------+
+13 rows in set (0.00 sec)
+
+3.
+
+mysql> create view teacher as select * from Instructor where ID not in (select ID from Teaches);
+Query OK, 0 rows affected (0.95 sec)
+
+mysql> select * from teacher;
++-------+-----------+-----------+--------+
+| ID    | name      | dept_name | salary |
++-------+-----------+-----------+--------+
+| 33456 | Gold      | Physics   |  95700 |
+| 58583 | Califieri | History   |  71610 |
++-------+-----------+-----------+--------+
+2 rows in set (0.17 sec)
+
+4.
+
+mysql> insert into studentlist values(31287,'Royal','Music',50,date'2004-07-26');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from studentlist;
++-------+------------------+------------+----------+------------+
+| ID    | name             | dept_name  | tot_cred | DOB        |
++-------+------------------+------------+----------+------------+
+| 76653 | Aoi              | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas         | Elec. Eng. |       98 | 2011-06-07 |
+| 19991 | Brandt           | History    |       80 | 2002-06-10 |
+| 76543 | Brown            | Comp. Sci. |       58 | 2009-03-09 |
+| 23121 | Chavez           | Finance    |      110 | 2003-05-25 |
+| 45678 | Mozart           | Physics    |       56 | 1999-08-27 |
+| 44553 | Peltier          | Physics    |       56 | 2004-04-30 |
+| 13721 | Rinoy Kuriyakose | Comp. Sci. |      180 | 2002-06-22 |
+| 31287 | Royal            | Music      |       50 | 2004-07-26 |
+| 55739 | Sanchez          | Music      |       48 | 1995-02-07 |
+| 12345 | Shankar          | Comp. Sci. |       42 | 2001-01-01 |
+| 98988 | Tanaka           | Biology    |      120 | 2012-04-08 |
+| 54321 | Williams         | Comp. Sci. |       54 | 2006-10-01 |
+|   128 | Zhang            | Comp. Sci. |      102 | 2000-07-24 |
++-------+------------------+------------+----------+------------+
+14 rows in set (0.00 sec)
+
+mysql> update studentlist set name ='Saviour' where ID=31287;
+Query OK, 1 row affected (0.07 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from studentlist;
++-------+------------------+------------+----------+------------+
+| ID    | name             | dept_name  | tot_cred | DOB        |
++-------+------------------+------------+----------+------------+
+| 76653 | Aoi              | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas         | Elec. Eng. |       98 | 2011-06-07 |
+| 19991 | Brandt           | History    |       80 | 2002-06-10 |
+| 76543 | Brown            | Comp. Sci. |       58 | 2009-03-09 |
+| 23121 | Chavez           | Finance    |      110 | 2003-05-25 |
+| 45678 | Mozart           | Physics    |       56 | 1999-08-27 |
+| 44553 | Peltier          | Physics    |       56 | 2004-04-30 |
+| 13721 | Rinoy Kuriyakose | Comp. Sci. |      180 | 2002-06-22 |
+| 55739 | Sanchez          | Music      |       48 | 1995-02-07 |
+| 31287 | Saviour          | Music      |       50 | 2004-07-26 |
+| 12345 | Shankar          | Comp. Sci. |       42 | 2001-01-01 |
+| 98988 | Tanaka           | Biology    |      120 | 2012-04-08 |
+| 54321 | Williams         | Comp. Sci. |       54 | 2006-10-01 |
+|   128 | Zhang            | Comp. Sci. |      102 | 2000-07-24 |
++-------+------------------+------------+----------+------------+
+14 rows in set (0.00 sec)
+
+5.
+
+mysql> delete from studentlist where ID=31287;
+Query OK, 1 row affected (0.19 sec)
+
+mysql> select * from studentlist;
++-------+------------------+------------+----------+------------+
+| ID    | name             | dept_name  | tot_cred | DOB        |
++-------+------------------+------------+----------+------------+
+| 76653 | Aoi              | Elec. Eng. |       60 | 2010-05-10 |
+| 98765 | Bourikas         | Elec. Eng. |       98 | 2011-06-07 |
+| 19991 | Brandt           | History    |       80 | 2002-06-10 |
+| 76543 | Brown            | Comp. Sci. |       58 | 2009-03-09 |
+| 23121 | Chavez           | Finance    |      110 | 2003-05-25 |
+| 45678 | Mozart           | Physics    |       56 | 1999-08-27 |
+| 44553 | Peltier          | Physics    |       56 | 2004-04-30 |
+| 13721 | Rinoy Kuriyakose | Comp. Sci. |      180 | 2002-06-22 |
+| 55739 | Sanchez          | Music      |       48 | 1995-02-07 |
+| 12345 | Shankar          | Comp. Sci. |       42 | 2001-01-01 |
+| 98988 | Tanaka           | Biology    |      120 | 2012-04-08 |
+| 54321 | Williams         | Comp. Sci. |       54 | 2006-10-01 |
+|   128 | Zhang            | Comp. Sci. |      102 | 2000-07-24 |
++-------+------------------+------------+----------+------------+
+13 rows in set (0.01 sec)
+
+6.
+
+mysql> drop view yearwise;
+Query OK, 0 rows affected (1.13 sec)
+
+mysql> drop view studentlist;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> drop view teacher;
+Query OK, 0 rows affected (0.20 sec)
+

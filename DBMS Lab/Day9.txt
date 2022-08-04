@@ -1,0 +1,49 @@
+1.
+
+mysql> select sum(salary),max(salary),min(salary),avg(salary) from Instructor;
++-------------+-------------+-------------+-------------+
+| sum(salary) | max(salary) | min(salary) | avg(salary) |
++-------------+-------------+-------------+-------------+
+|      916245 |      104500 |       46200 |  83295.0000 |
++-------------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+2.
+
+mysql> select sum(salary),max(salary),min(salary),avg(salary) from Instructor where dept_name='History';
++-------------+-------------+-------------+-------------+
+| sum(salary) | max(salary) | min(salary) | avg(salary) |
++-------------+-------------+-------------+-------------+
+|      140910 |       71610 |       69300 |  70455.0000 |
++-------------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+3.
+
+mysql> select count(*) from Instructor;
++----------+
+| count(*) |
++----------+
+|       11 |
++----------+
+1 row in set (0.00 sec)
+
+4.
+
+mysql> select count(*) from Instructor where dept_name='Comp. Sci.';
++----------+
+| count(*) |
++----------+
+|        3 |
++----------+
+1 row in set (0.00 sec)
+
+5.
+
+mysql> select count(distinct salary) from Instructor;
++------------------------+
+| count(distinct salary) |
++------------------------+
+|                     11 |
++------------------------+
+1 row in set (0.00 sec)
