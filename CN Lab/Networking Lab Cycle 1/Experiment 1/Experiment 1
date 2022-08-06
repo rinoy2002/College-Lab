@@ -1,0 +1,171 @@
+
+                               EXPERIMENT No.1
+                               
+                                  OUTPUT 
+
+1.
+
+osn@osn-OptiPlex-9020:~$ sudo ifconfig
+eno1: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 172.20.35.45  netmask 255.255.0.0  broadcast 172.20.255.255
+        inet6 fe80::1a54:b9b3:f56d:a173  prefixlen 64  scopeid 0x20<link>
+        ether 98:90:96:c1:e7:5f  txqueuelen 1000  (Ethernet)
+        RX packets 8716  bytes 1664536 (1.6 MB)
+        RX errors 0  dropped 184  overruns 0  frame 0
+        TX packets 555  bytes 65339 (65.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 20  memory 0xf7c00000-f7c20000  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 296  bytes 32688 (32.6 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 296  bytes 32688 (32.6 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+2.
+
+osn@osn-OptiPlex-9020:~$ ping 172.20.31.235 -c 5
+PING 172.20.31.235 (172.20.31.235) 56(84) bytes of data.
+64 bytes from 172.20.31.235: icmp_seq=1 ttl=64 time=0.776 ms
+64 bytes from 172.20.31.235: icmp_seq=2 ttl=64 time=0.789 ms
+64 bytes from 172.20.31.235: icmp_seq=3 ttl=64 time=0.774 ms
+64 bytes from 172.20.31.235: icmp_seq=4 ttl=64 time=0.842 ms
+64 bytes from 172.20.31.235: icmp_seq=5 ttl=64 time=0.707 ms
+
+--- 172.20.31.235 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4103ms
+rtt min/avg/max/mdev = 0.707/0.777/0.842/0.043 ms
+
+osn@osn-OptiPlex-9020:~$ ping 172.20.31.235 -c 5 -s 100
+PING 172.20.31.235 (172.20.31.235) 100(128) bytes of data.
+108 bytes from 172.20.31.235: icmp_seq=1 ttl=64 time=0.789 ms
+108 bytes from 172.20.31.235: icmp_seq=2 ttl=64 time=0.721 ms
+108 bytes from 172.20.31.235: icmp_seq=3 ttl=64 time=0.610 ms
+108 bytes from 172.20.31.235: icmp_seq=4 ttl=64 time=0.636 ms
+108 bytes from 172.20.31.235: icmp_seq=5 ttl=64 time=0.775 ms
+
+--- 172.20.31.235 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4086ms
+rtt min/avg/max/mdev = 0.610/0.706/0.789/0.072 ms
+
+3.
+
+osn@osn-OptiPlex-9020:~$ netstat -at
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State      
+tcp        0      0 localhost:domain        0.0.0.0:*               LISTEN     
+tcp        0      0 localhost:ipp           0.0.0.0:*               LISTEN     
+tcp        0      0 osn-OptiPlex-9020:45538 239.237.117.34.bc:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:54622 server-13-33-146-:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:34132 172.16.16.16:8090       TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:43282 maa05s25-in-f2.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:49294 ec2-44-226-241-1.:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:51974 142.0.165.131:https     ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:34144 172.16.16.16:8090       ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:43278 maa05s25-in-f2.1e:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:57480 a23-65-107-193.de:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:43430 117.18.237.29:http      ESTABLISHED
+tcp        1      0 osn-OptiPlex-9020:33904 172.16.16.16:8090       CLOSE_WAIT 
+tcp        0      0 osn-OptiPlex-9020:41162 a23-65-96-119.dep:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:40684 a23-65-97-24.depl:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:39190 82.221.107.34.bc.g:http ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:39192 82.221.107.34.bc.g:http ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:52058 maa05s05-in-f6.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:54128 maa03s39-in-f4.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:40368 maa03s45-in-f3.1e1:http ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:34416 13.107.42.14:https      ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:58202 a23-35-84-217.dep:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:50884 maa05s22-in-f8.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:43448 117.18.237.29:http      ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:40662 a23-65-97-24.depl:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:58192 maa03s47-in-f3.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:35318 66.117.22.166:https     ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:39944 76.237.120.34.bc.:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:34874 117.239.240.17:https    ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:58190 a23-35-84-217.dep:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:54620 server-13-33-146-:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:49326 server-13-33-146-:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:52554 a23-65-96-112.dep:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:40392 maa03s45-in-f3.1e1:http ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:37656 server-13-33-171-:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:39946 76.237.120.34.bc.:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:40032 server-13-33-146-:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:34566 xx-fbcdn-shv-01-t:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:53814 maa05s06-in-f2.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:59384 221.5.120.34.bc.g:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:45844 edge-star-mini-sh:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:39950 76.237.120.34.bc.:https TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:54322 a23-9-17-11.deplo:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:55498 maa03s42-in-f2.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:40378 maa03s39-in-f2.1e:https ESTABLISHED
+tcp        0      0 osn-OptiPlex-9020:51976 142.0.165.131:https     TIME_WAIT  
+tcp        0      0 osn-OptiPlex-9020:33686 a23-65-108-63.dep:https ESTABLISHED
+tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN
+
+4.
+
+osn@osn-OptiPlex-9020:~$ arp -a
+? (172.20.25.244) at 00:20:6b:e0:fc:bc [ether] on eno1
+? (172.20.31.142) at 70:b5:e8:e4:65:d4 [ether] on eno1
+? (172.20.10.106) at 00:20:6b:ee:8e:6c [ether] on eno1
+_gateway (172.20.6.1) at 00:1a:8c:6b:b3:da [ether] on eno1
+? (172.20.30.3) at 38:21:c7:48:c7:80 [ether] on eno1
+? (172.20.202.248) at a0:8c:fd:65:52:dc [ether] on eno1
+? (172.20.31.235) at 98:90:96:c1:ed:6c [ether] on eno1
+? (172.20.202.16) at 00:20:6b:bf:26:3f [ether] on eno1
+? (172.20.32.213) at b4:22:00:4e:f4:61 [ether] on eno1
+? (172.20.31.141) at 70:b5:e8:e4:6b:5c [ether] on eno1
+? (172.20.30.2) at 38:21:c7:48:e7:74 [ether] on eno1
+? (172.20.0.201) at 00:c0:b7:f1:e4:22 [ether] on eno1
+? (172.20.10.254) at 00:20:6b:ee:8e:d3 [ether] on eno1
+? (172.20.202.20) at 00:20:6b:f2:f9:4a [ether] on eno1
+
+
+osn@osn-OptiPlex-9020:~$ arp -a 172.20.31.235
+? (172.20.31.235) at 98:90:96:c1:ed:6c [ether] on eno1
+osn@osn-OptiPlex-9020:~$ 
+
+5.
+
+osn@osn-OptiPlex-9020:/etc$ cat resolv.conf 
+# This file is managed by man:systemd-resolved(8). Do not edit.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs must not access this file directly, but only through the
+# symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a different way,
+# replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+
+
+osn@osn-OptiPlex-9020:/etc$ cat hosts
+127.0.0.1	localhost
+127.0.1.1	osn-OptiPlex-9020
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+osn@osn-OptiPlex-9020:/etc/netplan$ cat 01-network-manager-all.yaml 
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+

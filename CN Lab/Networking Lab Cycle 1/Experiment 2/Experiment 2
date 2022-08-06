@@ -1,0 +1,212 @@
+                           EXPERIMENT No. 2
+
+                               OUTPUT
+
+1.
+
+C:\Users\students>ipconfig
+
+Windows IP Configuration
+
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Link-local IPv6 Address . . . . . : fe80::e9d1:6355:d2cb:74fa%11
+   IPv4 Address. . . . . . . . . . . : 172.20.35.45
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Default Gateway . . . . . . . . . : 172.20.6.1
+
+
+2.
+
+C:\Users\students>ping 127.0.0.1
+
+Pinging 127.0.0.1 with 32 bytes of data:
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+Reply from 127.0.0.1: bytes=32 time<1ms TTL=128
+
+Ping statistics for 127.0.0.1:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 0ms, Maximum = 0ms, Average = 0ms
+
+C:\Users\students>ping 172.20.31.133
+
+Pinging 172.20.31.133 with 32 bytes of data:
+Reply from 172.20.31.133: bytes=32 time=4ms TTL=128
+Reply from 172.20.31.133: bytes=32 time=1ms TTL=128
+Reply from 172.20.31.133: bytes=32 time=27ms TTL=128
+Reply from 172.20.31.133: bytes=32 time=3ms TTL=128
+
+Ping statistics for 172.20.31.133:
+    Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 1ms, Maximum = 27ms, Average = 8ms
+
+C:\Users\students>ping /n 6 google.com
+
+Pinging google.com [142.250.205.238] with 32 bytes of data:
+Reply from 142.250.205.238: bytes=32 time=43ms TTL=118
+Reply from 142.250.205.238: bytes=32 time=71ms TTL=118
+Reply from 142.250.205.238: bytes=32 time=101ms TTL=118
+Reply from 142.250.205.238: bytes=32 time=59ms TTL=118
+Reply from 142.250.205.238: bytes=32 time=66ms TTL=118
+Reply from 142.250.205.238: bytes=32 time=17ms TTL=118
+
+Ping statistics for 142.250.205.238:
+    Packets: Sent = 6, Received = 6, Lost = 0 (0% loss),
+Approximate round trip times in milli-seconds:
+    Minimum = 17ms, Maximum = 101ms, Average = 59ms
+
+3.
+
+C:\Users\students>netstat -at
+
+Active Connections
+
+  Proto  Local Address          Foreign Address        State           Offload State
+
+  TCP    0.0.0.0:135            RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:445            RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:623            RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:5040           RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:5357           RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:7680           RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:16992          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49664          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49665          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49666          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49667          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49668          RL127:0                LISTENING       InHost
+  TCP    0.0.0.0:49671          RL127:0                LISTENING       InHost
+  TCP    127.0.0.1:49813        RL127:0                LISTENING       InHost
+  TCP    172.20.35.45:139       RL127:0                LISTENING       InHost
+  TCP    172.20.35.45:5357      adminAca-PC:52838      TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      ADMINACA-PC:53070      TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      ADMINACA-PC:53232      TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      172.20.30.6:50573      TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:58362            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:58502            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:58526            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:58550            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:59615            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      MCA31:59633            TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      172.20.32.66:49167     TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      172.20.32.66:49221     TIME_WAIT       InHost
+  TCP    172.20.35.45:5357      172.20.32.66:51213     TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      NT173:49824            TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      NT173:49883            TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      NT173:49908            ESTABLISHED     InHost
+  TCP    172.20.35.45:7680      NT176:49766            TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      172.20.30.94:56523     ESTABLISHED     InHost
+  TCP    172.20.35.45:7680      OSN-01:52423           ESTABLISHED     InHost
+  TCP    172.20.35.45:7680      RL125:58532            ESTABLISHED     InHost
+  TCP    172.20.35.45:7680      RL125:58662            TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      RL121:49864            TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      172.20.33.24:50178     TIME_WAIT       InHost
+  TCP    172.20.35.45:7680      172.20.33.24:50363     ESTABLISHED     InHost
+
+4.
+
+C:\Users\students>arp -a
+
+Interface: 172.20.35.45 --- 0xb
+  Internet Address      Physical Address      Type
+  172.20.6.1            00-1a-8c-6b-b3-da     dynamic
+  172.20.20.24          98-90-96-c1-e8-2c     dynamic
+  172.20.20.36          98-90-96-be-e4-37     dynamic
+  172.20.20.46          98-90-96-be-5a-ba     dynamic
+  172.20.20.62          8c-dc-d4-3f-3c-b8     dynamic
+  172.20.20.64          98-90-96-be-e0-ea     dynamic
+  172.20.25.245         00-20-6b-e0-fd-48     dynamic
+  172.20.28.55          64-51-06-2c-3d-3f     dynamic
+  172.20.30.20          48-e2-44-7f-06-95     dynamic
+  172.20.30.24          a4-17-31-df-c6-05     dynamic
+  172.20.30.47          a4-17-31-72-cf-57     dynamic
+  172.20.30.93          d8-12-65-13-74-73     dynamic
+  172.20.30.94          f8-89-d2-84-79-91     dynamic
+  172.20.30.99          8c-c8-4b-89-2f-45     dynamic
+  172.20.30.109         40-f0-2f-d2-6c-d0     dynamic
+  172.20.30.160         68-ec-c5-54-82-6f     dynamic
+  172.20.30.171         14-f6-d8-f2-0b-52     dynamic
+  172.20.30.173         98-90-96-c1-f2-21     dynamic
+  172.20.30.207         ec-2e-98-e4-02-ab     dynamic
+  172.20.31.62          c8-d9-d2-18-d7-2c     dynamic
+  172.20.31.65          54-a0-50-80-34-61     dynamic
+  172.20.31.74          3c-91-80-37-8f-85     dynamic
+  172.20.31.85          48-e7-da-4c-30-77     dynamic
+  172.20.31.132         5c-ba-ef-20-b5-d7     dynamic
+  172.20.31.133         c8-d9-d2-2c-da-0a     dynamic
+  172.20.31.148         68-94-23-0a-7f-bf     dynamic
+  172.20.31.151         74-e6-e2-49-f0-e2     dynamic
+  172.20.31.168         a8-a7-95-64-08-0f     dynamic
+  172.20.31.235         98-90-96-c1-ed-6c     dynamic
+  172.20.31.238         98-90-96-c2-ff-fe     dynamic
+  172.20.31.239         98-90-96-be-e1-f0     dynamic
+  172.20.31.252         98-90-96-be-e1-48     dynamic
+  172.20.32.17          80-e8-2c-91-ac-2c     dynamic
+  172.20.32.78          98-90-96-c2-fb-cf     dynamic
+  172.20.32.127         08-8f-c3-45-81-98     dynamic
+  172.20.32.228         98-90-96-c2-ff-72     dynamic
+  172.20.33.4           30-d0-42-0d-61-74     dynamic
+  172.20.33.24          1c-69-7a-fd-5f-2e     dynamic
+  172.20.33.83          98-90-96-c2-83-ea     dynamic
+  172.20.33.239         b4-2e-99-7f-1e-44     dynamic
+  172.20.33.247         00-0b-04-0b-17-1f     dynamic
+  172.20.34.222         98-90-96-be-e0-0e     dynamic
+  172.20.35.101         54-b8-0a-01-69-c7     dynamic
+  172.20.35.179         e8-d8-d1-33-29-cd     dynamic
+  172.20.37.101         10-1f-74-e9-34-5b     dynamic
+  172.20.73.10          f0-7d-68-0e-cb-50     dynamic
+  172.20.100.31         64-00-6a-15-a4-51     dynamic
+  172.20.100.85         98-90-96-c2-80-4b     dynamic
+  172.20.101.43         50-9a-4c-1a-69-db     dynamic
+  172.20.144.191        24-0f-9b-15-28-69     dynamic
+  172.20.255.255        ff-ff-ff-ff-ff-ff     static
+  224.0.0.2             01-00-5e-00-00-02     static
+  224.0.0.22            01-00-5e-00-00-16     static
+  224.0.0.251           01-00-5e-00-00-fb     static
+  224.0.0.252           01-00-5e-00-00-fc     static
+  239.255.255.250       01-00-5e-7f-ff-fa     static
+  255.255.255.255       ff-ff-ff-ff-ff-ff     static
+
+C:\Users\students>arp -a 172.20.31.133
+
+Interface: 172.20.35.45 --- 0xb
+  Internet Address      Physical Address      Type
+  172.20.31.133         c8-d9-d2-2c-da-0a     dynamic
+
+5.
+
+C:\Users\students>ipconfig /all
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : RL127
+   Primary Dns Suffix  . . . . . . . :
+   Node Type . . . . . . . . . . . . : Hybrid
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+
+Ethernet adapter Ethernet:
+
+   Connection-specific DNS Suffix  . :
+   Description . . . . . . . . . . . : Intel(R) Ethernet Connection I217-LM
+   Physical Address. . . . . . . . . : 98-90-96-C1-E7-5F
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::e9d1:6355:d2cb:74fa%11(Preferred)
+   IPv4 Address. . . . . . . . . . . : 172.20.35.45(Preferred)
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Lease Obtained. . . . . . . . . . : 18 May 2022 04:39:38
+   Lease Expires . . . . . . . . . . : 18 May 2022 10:39:38
+   Default Gateway . . . . . . . . . : 172.20.6.1
+   DHCP Server . . . . . . . . . . . : 172.20.6.1
+   DHCPv6 IAID . . . . . . . . . . . : 93884566
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-1C-B7-EB-98-90-96-C1-E7-5F
+   DNS Servers . . . . . . . . . . . : 8.8.4.4
+                                       4.2.2.2
+   NetBIOS over Tcpip. . . . . . . . : Enabled
